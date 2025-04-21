@@ -1,20 +1,33 @@
-# 🔐 Secrets & config
+# 🔐 Secrets & Firebase Config
 functions/.env
 functions/.runtimeconfig.json
-firebase-debug.log
 .firebaserc
+firebase.json
+firebase-debug.log
+firestore.indexes.json
+firestore.rules
+firestore.rules.bak
+storage.rules
 
-# 📦 Node modules
-node_modules
-functions/node_modules
+# 🚫 Firebase Logs & Emulator Artifacts
+firebase.json.lock
+functions/debug.log
+functions/logs/
+functions/__logs__/
+functions/*.log
+functions/logs/*.json
 
-# 🧪 Test artifacts
+# 📦 Node Modules
+node_modules/
+functions/node_modules/
+
+# 🧪 Test Artifacts
 coverage/
-__pycache__/
+functions/coverage/
 functions/__tests__/output/
 functions/__tests__/*.log
 
-# 💻 OS & editor clutter
+# 💻 System + Editor Clutter
 .DS_Store
 Thumbs.db
 .vscode/
@@ -22,7 +35,7 @@ Thumbs.db
 *.swp
 *.swo
 
-# 🚫 Build / output
+# 🏗️ Build / Output
 build/
 dist/
 tmp/
@@ -30,20 +43,15 @@ temp/
 functions/tmp/
 functions/dist/
 
-# 📝 Logs
+# 📝 General Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-functions/debug.log
 *.log
 
-# 💡 Future frontend tools (if added)
+# 💡 Environment Configs (if frontend uses any)
+.env
 .env.local
 .env.development
 .env.production
 public/env-config.js
-
-# 🔍 Firebase emulators (if you run them later)
-firebase.json.lock
-firestore.indexes.json
-firestore.rules.bak
