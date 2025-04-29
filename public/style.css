@@ -1,0 +1,153 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scrolling */
+  }
+
+  /* Chat Container */
+  .chat-container {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Fixed height */
+    overflow: hidden; /* Prevent container overflow */
+  }
+
+  /* Header */
+  .chat-header {
+    background: #00d9ff;
+    color: #000000;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    flex-shrink: 0; /* Prevent header from shrinking */
+  }
+
+  /* Inputs */
+  select,
+  textarea,
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    flex-shrink: 0; /* Prevent inputs from shrinking */
+  }
+
+  select {
+    background: #f9f9f9;
+    cursor: pointer;
+  }
+
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+    border-color: #00d9ff;
+    box-shadow: 0 0 5px rgba(0, 217, 255, 0.5);
+  }
+
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+
+  button {
+    background: #00d9ff;
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    transition: background 0.3s ease;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #00c7eb;
+  }
+
+  /* Download Button Specific Styling */
+  #downloadButton {
+    background: #00d9ff; /* Green color for download */
+    color: #000000;
+    margin-top: 8px;
+  }
+
+  #downloadButton:hover {
+    background: #00c7eb; /* Slightly darker green on hover */
+  }
+
+  /* Output Box */
+  #output {
+    margin-top: 8px;
+    padding: 16px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.6; /* Improved readability */
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    flex: 1; /* Take remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  }
+
+  /* Format response sections */
+  #output p {
+    margin: 12px 0; /* Increased spacing between paragraphs */
+  }
+
+  /* Bold headings (e.g., "Urgency", "Task List Compilation") */
+  #output p:where(:first-child, :has(+ p)) {
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 8px;
+  }
+
+  /* Indent nested content (e.g., list items under headings) */
+  #output p:not(:first-child):not(:has(+ p)) {
+    margin-left: 20px;
+  }
+
+  /* Mobile Optimization */
+  @media (max-width: 600px) {
+    .chat-container {
+      padding: 16px;
+      border-radius: 12px;
+      max-width: 90%;
+      height: 90vh; /* Adjust for smaller screens */
+    }
+
+    select,
+    textarea,
+    button,
+    #output {
+      font-size: 15px;
+      padding: 10px;
+    }
+
+    .chat-header {
+      font-size: 18px;
+    }
+  }

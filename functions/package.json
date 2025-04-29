@@ -1,0 +1,13 @@
+{
+    "name": "archeos-functions",
+    "main": "index.js",
+    "engines": {
+        "node": "20"
+    },
+    "dependencies": {
+        "firebase-functions": "^5.1.0",
+        "firebase-admin": "^12.0.0",
+        "node-fetch": "^2.6.12",
+        "dotenv": "^16.4.5"
+    }
+}

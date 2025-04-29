@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArcheOS Assistant</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">ArcheOS Assistant</div>
+
+      <label for="role" class="sr-only">Select Role</label>
+      <select id="role" aria-label="Select AI role">
+        <option value="archeos" selected>ArcheOS (Default)</option>
+        <option value="visioneer">Visioneer</option>
+        <option value="technarch">Technarch</option>
+        <option value="guardian">Guardian</option>
+        <option value="pulsebridge">PulseBridge</option>
+        <option value="harmonize">Harmonize</option>
+        <option value="kindling">Kindling</option>
+        <option value="revwatch">Revwatch</option>
+        <option value="corekeeper">Corekeeper</option>
+        <option value="signalcaster">Signalcaster</option>
+      </select>
+
+      <textarea
+        id="input"
+        placeholder="Type your message here..."
+        aria-label="Message input"
+      ></textarea>
+      <button id="sendButton" aria-label="Send message">Send</button>
+
+      <div id="output" role="region" aria-live="polite"></div>
+      <button id="downloadButton" aria-label="Download report card">Download Report Card</button>
+    </div>
+
+    <script src="chatbot.js"></script>
+  </body>
+</html>
