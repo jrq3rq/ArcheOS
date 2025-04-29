@@ -37,6 +37,7 @@ body {
     text-align: center;
     border-radius: 8px;
     margin-bottom: 16px;
+    border: 1px solid #d1d1d1;
     flex-shrink: 0; /* Prevent header from shrinking */
   }
 
@@ -76,7 +77,7 @@ body {
     background: #00d9ff;
     color: #000000;
     font-weight: bold;
-    border: none;
+    border: 1px solid #d1d1d1;
     transition: background 0.3s ease;
     cursor: pointer;
   }
@@ -87,13 +88,18 @@ body {
 
   /* Download Button Specific Styling */
   #downloadButton {
-    background: #00d9ff; /* Green color for download */
-    color: #000000;
+    background: #f5f5f5; /* Light gray to blend with white background */
+    color: #d1d1d1; /* Dark gray text for contrast */
+    font-weight: normal; /* Normal weight for less emphasis */
+    border: 1px solid #d1d1d1; /* Subtle borderline */
     margin-top: 8px;
+    transition: background 0.3s ease, border-color 0.3s ease;
   }
 
   #downloadButton:hover {
-    background: #00c7eb; /* Slightly darker green on hover */
+    color: #000000;
+    background: #e8e8e8; /* Slightly darker gray on hover */
+    border-color: #b0b0b0; /* Darker borderline on hover */
   }
 
   /* Output Box */

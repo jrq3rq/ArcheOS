@@ -14,17 +14,17 @@ archeos/
 │ ├── .gitignore # Prevents secrets and `node_modules` from being committed
 │ ├── package.json # Dependencies (dotenv, node-fetch, firebase-functions, etc.)
 │ ├── prompts/ # 🔹 System prompt templates
-│ │ └── role-presets.js # Role-to-system-prompt map (e.g., Visioneer, Guardian, PulseBridge)
+│ │ └── role-presets.js # Role-to-system-prompt map (e.g., Strategist, Sentinel, Synchronizer)
 │ ├── agents/ # 🔹 Modular AI agent logic files (one per function/domain)
-│ │ ├── visioneer.js # Agent for planning, KPIs, scope control
-│ │ ├── technarch.js # Agent for CI/CD, deploy/test automation
-│ │ ├── guardian.js # Agent for compliance: GDPR, WCAG, CCPA, bias checks
-│ │ ├── pulsebridge.js # Agent for venue onboarding, API sync, feedback loops
-│ │ ├── harmonize.js # Agent for team task assignment (Slack), risk alerts
-│ │ ├── kindling.js # Agent for tracking forums, sentiment, social sharing
-│ │ ├── revwatch.js # Agent for monetization logic (tier forecasts, usage alerts)
-│ │ ├── corekeeper.js # Agent for backup routines and disaster recovery
-│ │ └── signalcaster.js # Agent for marketing (TikTok/X push, UX benchmarking)
+│ │ ├── strategist.js # Agent for planning, KPIs, scope control
+│ │ ├── architect.js # Agent for CI/CD, deploy/test automation
+│ │ ├── sentinel.js # Agent for compliance: GDPR, WCAG, CCPA, bias checks
+│ │ ├── synchronizer.js # Agent for venue onboarding, API sync, feedback loops
+│ │ ├── coordinator.js # Agent for team task assignment (Slack), risk alerts
+│ │ ├── marketer.js # Agent for marketing (TikTok/X push, UX benchmarking)
+│ │ ├── optimizer.js # Agent for monetization logic (tier forecasts, usage alerts)
+│ │ ├── sustainer.js # Agent for backup routines and disaster recovery
+│ │ └── engager.js # Agent for tracking forums, sentiment, social sharing
 │ ├── utils/ # 🔹 Shared helper functions and integrations
 │ │ ├── github.js # GitHub webhook handler, polling, commit fetcher
 │ │ ├── slack.js # Slack Bot integration: message send, task assign
