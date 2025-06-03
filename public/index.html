@@ -3,37 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ArcheOS Assistant</title>
+    <title>Operating System Assistant</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="chat-container">
-      <div class="chat-header">ArcheOS Assistant</div>
-
+      <div class="chat-header">ArcheOS AI</div>
 
       <label for="role" class="sr-only">Select Role</label>
       <select id="role" aria-label="Select AI role">
-        <option value="archeos" selected>ArcheOS (Project Manager)</option> <!-- General Operations -->
-        <option value="strategist">Strategist (Vision & Planning)</option> <!-- Vision, Strategy -->
-        <option value="architect">Architect (Development)</option> <!-- Build, Architecture -->
-        <option value="sentinel">Sentinel (Security)</option> <!-- Security, Compliance -->
-        <option value="synchronizer">Synchronizer (Team Sync)</option> <!-- Team/System Alignment -->
-        <option value="coordinator">Coordinator (Orchestration)</option> <!-- Coordination -->
-        <option value="marketer">Marketer (Promotion)</option> <!-- Marketing, Awareness -->
-        <option value="optimizer">Optimizer (Revenue Growth)</option> <!-- Revenue, Optimization -->
-        <option value="sustainer">Sustainer (Maintenance)</option> <!-- Maintenance, Health -->
-        <option value="engager">Engager (Community)</option> <!-- Engagement, Feedback -->
+        <option value="planner" selected>Planner (Project Manager)</option>
+        <option value="strategist">Strategist (Vision & Planning)</option>
+        <option value="developer">Developer (Development)</option>
+        <option value="compliance">Compliance (Security)</option>
+        <option value="integrator">Integrator (System Sync)</option>
+        <option value="coordinator">Coordinator (Orchestration)</option>
+        <option value="marketer">Marketer (Promotion)</option>
+        <option value="optimizer">Optimizer (Revenue Growth)</option>
+        <option value="sustainer">Sustainer (Maintenance)</option>
+        <option value="engager">Engager (Community)</option>
       </select>
+
+      <div id="progress" style="margin: 10px 0;"></div>
 
       <textarea
         id="input"
-        placeholder="Type your message here..."
-        aria-label="Message input"
+        placeholder="Type your message or answer here..."
+        aria-label="Message or answer input"
       ></textarea>
       <button id="sendButton" aria-label="Send message">Send</button>
 
       <div id="output" role="region" aria-live="polite"></div>
       <button id="downloadButton" aria-label="Download report card">Download Report Card</button>
+      <button id="configureButton" aria-label="Configure system">Configure System</button>
+      <button id="exitConfigButton" aria-label="Exit configuration" style="display: none;">Exit Configuration</button>
     </div>
 
     <script src="chatbot.js"></script>

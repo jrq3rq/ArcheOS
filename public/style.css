@@ -1,159 +1,238 @@
 /* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f0f2f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden; /* Prevent body scrolling */
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden; /* Prevent body scrolling */
+}
 
-  /* Chat Container */
+/* Chat Container */
+.chat-container {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 80vh; /* Fixed height */
+  overflow: hidden; /* Prevent container overflow */
+  position: relative; /* For overlay positioning */
+}
+
+.chat-container.config-mode #exitConfigButton {
+  margin-top: 10px; /* Add 20px margin to top during config mode */
+}
+
+/* Header */
+.chat-header {
+  background: #00d9ff;
+  color: #000000;
+  padding: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #d1d1d1;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+/* Inputs */
+select,
+textarea,
+button,
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  flex-shrink: 0; /* Prevent inputs from shrinking */
+}
+
+select {
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+select:focus,
+textarea:focus,
+button:focus,
+input:focus {
+  outline: none;
+  border-color: #00d9ff;
+  box-shadow: 0 0 5px rgba(0, 217, 255, 0.5);
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+button {
+  background: #00d9ff;
+  color: #000000;
+  font-weight: bold;
+  border: 1px solid #d1d1d1;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00c7eb;
+}
+
+/* Download Button Specific Styling */
+#downloadButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+  border-radius: 8px;
+}
+
+#downloadButton:hover {
+  background-color: #2980b9;
+}
+
+#downloadButton:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Output Box */
+#output {
+  margin-top: 8px;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6; /* Improved readability */
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  flex: 1; /* Take remaining space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
+
+/* Format response sections */
+#output p {
+  margin: 12px 0; /* Increased spacing between paragraphs */
+}
+
+/* Bold headings (e.g., "Urgency", "Task List Compilation") */
+#output p:where(:first-child, :has(+ p)) {
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+/* Indent nested content (e.g., list items under headings) */
+#output p:not(:first-child):not(:has(+ p)) {
+  margin-left: 20px;
+}
+
+/* Auth Overlay */
+.auth-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.auth-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 80%;
+  max-width: 300px;
+}
+
+.auth-box h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #333;
+}
+
+#configureButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#configureButton:hover {
+  background-color: #2980b9;
+}
+
+#configureButton:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+#exitConfigButton {
+  background-color: #e74c3c; /* Red to indicate exit/cancel */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#exitConfigButton:hover {
+  background-color: #c0392b;
+}
+
+#exitConfigButton:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
   .chat-container {
-    width: 100%;
-    max-width: 500px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid #e0e0e0;
-    display: flex;
-    flex-direction: column;
-    height: 80vh; /* Fixed height */
-    overflow: hidden; /* Prevent container overflow */
+    padding: 16px;
+    border-radius: 12px;
+    max-width: 90%;
+    height: 90vh; /* Adjust for smaller screens */
   }
 
-  /* Header */
-  .chat-header {
-    background: #00d9ff;
-    color: #000000;
-    padding: 12px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    border: 1px solid #d1d1d1;
-    flex-shrink: 0; /* Prevent header from shrinking */
-  }
-
-  /* Inputs */
   select,
   textarea,
-  button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    margin-bottom: 12px;
-    flex-shrink: 0; /* Prevent inputs from shrinking */
-  }
-
-  select {
-    background: #f9f9f9;
-    cursor: pointer;
-  }
-
-  select:focus,
-  textarea:focus,
-  button:focus {
-    outline: none;
-    border-color: #00d9ff;
-    box-shadow: 0 0 5px rgba(0, 217, 255, 0.5);
-  }
-
-  textarea {
-    height: 100px;
-    resize: none;
-  }
-
-  button {
-    background: #00d9ff;
-    color: #000000;
-    font-weight: bold;
-    border: 1px solid #d1d1d1;
-    transition: background 0.3s ease;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background: #00c7eb;
-  }
-
-  /* Download Button Specific Styling */
-  #downloadButton {
-    background: #f5f5f5; /* Light gray to blend with white background */
-    color: #d1d1d1; /* Dark gray text for contrast */
-    font-weight: normal; /* Normal weight for less emphasis */
-    border: 1px solid #d1d1d1; /* Subtle borderline */
-    margin-top: 8px;
-    transition: background 0.3s ease, border-color 0.3s ease;
-  }
-
-  #downloadButton:hover {
-    color: #000000;
-    background: #e8e8e8; /* Slightly darker gray on hover */
-    border-color: #b0b0b0; /* Darker borderline on hover */
-  }
-
-  /* Output Box */
-  #output {
-    margin-top: 8px;
-    padding: 16px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    color: #333;
+  button,
+  #output,
+  input {
     font-size: 15px;
-    line-height: 1.6; /* Improved readability */
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    flex: 1; /* Take remaining space */
-    overflow-y: auto; /* Enable vertical scrolling */
-    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    padding: 10px;
   }
 
-  /* Format response sections */
-  #output p {
-    margin: 12px 0; /* Increased spacing between paragraphs */
+  .chat-header {
+    font-size: 18px;
   }
 
-  /* Bold headings (e.g., "Urgency", "Task List Compilation") */
-  #output p:where(:first-child, :has(+ p)) {
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 8px;
+  .auth-box {
+    width: 90%;
   }
-
-  /* Indent nested content (e.g., list items under headings) */
-  #output p:not(:first-child):not(:has(+ p)) {
-    margin-left: 20px;
-  }
-
-  /* Mobile Optimization */
-  @media (max-width: 600px) {
-    .chat-container {
-      padding: 16px;
-      border-radius: 12px;
-      max-width: 90%;
-      height: 90vh; /* Adjust for smaller screens */
-    }
-
-    select,
-    textarea,
-    button,
-    #output {
-      font-size: 15px;
-      padding: 10px;
-    }
-
-    .chat-header {
-      font-size: 18px;
-    }
-  }
+}
